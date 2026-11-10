@@ -1,0 +1,1 @@
+</main><footer>QueueLess Ghana · Student project prototype</footer><script src="assets/app.js"></script></body></html>

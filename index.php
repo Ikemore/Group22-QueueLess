@@ -1,0 +1,1 @@
+<?php require_once __DIR__.'/includes/bootstrap.php'; if(($_SESSION['role']??'')==='customer'){header('Location: customer.php');exit;} if(($_SESSION['role']??'')==='business'){header('Location: business.php');exit;} header('Location: login.php');exit;
