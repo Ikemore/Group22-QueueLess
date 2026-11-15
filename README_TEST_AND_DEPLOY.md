@@ -2,17 +2,15 @@
 
 ## Run locally with XAMPP
 1. Extract this folder into `C:\xampp\htdocs\QueueLess_Ghana_Queue_Module`.
-2. Start Apache and MySQL in XAMPP.
-3. Visit `http://localhost/phpmyadmin`, choose Import, and import `database.sql`.
-4. Check `config.php`. Default XAMPP credentials are user `root`, blank password. Change these if yours differ.
-5. Visit `http://localhost/QueueLess_Ghana_Queue_Module/login.php`.
+2. Start Apache in XAMPP. MySQL and phpMyAdmin are not needed for local use.
+3. Visit `http://localhost/QueueLess_Ghana_Queue_Module/login.php`. The app creates and seeds `data/queueless.sqlite` automatically (PHP's `pdo_sqlite` extension must be enabled).
 
 ## Demo accounts
 Password for both: `Queue123!`
 - Customer: `customer@queueless.test`
 - Business owner: `owner@queueless.test`
 
-If the demo password hash does not verify on your PHP setup, create a temporary PHP file with `<?php echo password_hash('Queue123!', PASSWORD_DEFAULT);`, open it via localhost, copy the generated hash, and update both demo users' password_hash values in phpMyAdmin.
+The local SQLite database is stored in `data/queueless.sqlite`; back up that file if you want to preserve local queue data. For MySQL deployment, set `QUEUELESS_DB_DSN` to a MySQL PDO DSN and set `QUEUELESS_DB_USER` and `QUEUELESS_DB_PASSWORD`; create/import the production database using your hosting provider's tools.
 
 ## Test the workflow
 1. Log in as the customer and join Haircut.

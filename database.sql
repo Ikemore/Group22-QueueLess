@@ -7,7 +7,7 @@ CREATE TABLE queue_tickets(id BIGINT AUTO_INCREMENT PRIMARY KEY, ticket_code VAR
 CREATE TABLE queue_events(id BIGINT AUTO_INCREMENT PRIMARY KEY, ticket_id BIGINT NOT NULL, actor_user_id INT NOT NULL, event_type VARCHAR(40) NOT NULL, created_at DATETIME DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY(ticket_id) REFERENCES queue_tickets(id), FOREIGN KEY(actor_user_id) REFERENCES users(id));
 -- Demo password for both accounts: Queue123!
 INSERT INTO users(id,full_name,email,password_hash,role) VALUES
-(1,'Demo Customer','customer@queueless.test','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.','customer'),
-(2,'Demo Business Owner','owner@queueless.test','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.','business');
+(1,'Demo Customer','customer@queueless.test','$2y$10$ERZwBUH6bxGUoUeROOzUz.QFxuedzuZ7/8S1iKnaC6vJ/oy/5Gisa','customer'),
+(2,'Demo Business Owner','owner@queueless.test','$2y$10$ERZwBUH6bxGUoUeROOzUz.QFxuedzuZ7/8S1iKnaC6vJ/oy/5Gisa','business');
 INSERT INTO businesses(id,owner_user_id,business_name,location) VALUES(1,2,'QueueLess Demo Barbershop','Nkawie, Ashanti Region');
 INSERT INTO services(id,business_id,service_name,estimated_minutes) VALUES(1,1,'Haircut',30),(2,1,'Haircut and beard trim',45),(3,1,'Hair wash',20);
